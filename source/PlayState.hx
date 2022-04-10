@@ -741,6 +741,16 @@ class PlayState extends MusicBeatState
 	
 						add(stageCurtains);
 				}
+			case 'msb':
+				{
+						defaultCamZoom = 0.9;
+						curStage = 'stage';
+						var bg:FlxSprite = new FlxSprite(-600, -200).loadGraphic(Paths.image('chara-bg'));
+						bg.antialiasing = true;
+						bg.scrollFactor.set(0.9, 0.9);
+						bg.active = false;
+						add(bg);
+				}
 			default:
 			{
 					defaultCamZoom = 0.9;
@@ -838,6 +848,8 @@ class PlayState extends MusicBeatState
 				dad.x -= 150;
 				dad.y += 100;
 				camPos.set(dad.getGraphicMidpoint().x + 300, dad.getGraphicMidpoint().y);
+			case "chara":
+				dad.y += 220;
 		}
 
 
