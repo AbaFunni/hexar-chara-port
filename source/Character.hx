@@ -142,7 +142,7 @@ class Character extends FlxSprite
 			case 'chara':
 				tex = Paths.getSparrowAtlas('characters/chara', 'shared');
 				frames = tex;
-				animation.addByPrefix('idle', 'chara', 24);
+				animation.addByPrefix('idle', 'chara idle', 24);
 				animation.addByPrefix('singUP', 'chara up', 24);
 				animation.addByPrefix('singRIGHT', 'chara right', 24);
 				animation.addByPrefix('singDOWN', 'chara down', 24);
