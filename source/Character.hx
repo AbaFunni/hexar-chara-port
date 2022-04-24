@@ -159,6 +159,27 @@ class Character extends FlxSprite
 				addOffset("shriek", 0, 0);
 
 				playAnim('idle');
+			case 'chara-reverse':
+				tex = Paths.getSparrowAtlas('characters/chara', 'shared');
+				frames = tex;
+				animation.addByPrefix('idle', 'chara idle', 24);
+				animation.addByPrefix('singUP', 'chara up', 24);
+				animation.addByPrefix('singRIGHT', 'chara right', 24);
+				animation.addByPrefix('singDOWN', 'chara down', 24);
+				animation.addByPrefix('singLEFT', 'chara left', 24);
+				animation.addByPrefix('save', 'chara zave', 24);
+				animation.addByPrefix('shriek', 'chara zrick', 24);
+
+				addOffset('idle');
+				addOffset("singUP", 4, 6);
+				addOffset("singRIGHT", 1, -3);
+				addOffset("singLEFT", 3, -1);
+				addOffset("singDOWN", 0, -15);
+				addOffset("save", 0, 0);
+				addOffset("shriek", 0, 0);
+
+				playAnim('idle');
+				flipX = true;
 			case 'spooky':
 				tex = Paths.getSparrowAtlas('characters/spooky_kids_assets');
 				frames = tex;
@@ -327,6 +348,48 @@ class Character extends FlxSprite
 				playAnim('idle');
 
 				flipX = true;
+
+			case 'bf-reverse':
+				var tex = Paths.getSparrowAtlas('characters/BOYFRIEND', 'shared');
+				frames = tex;
+
+				trace(tex.frames.length);
+
+				animation.addByPrefix('idle', 'BF idle dance', 24, false);
+				animation.addByPrefix('singUP', 'BF NOTE UP0', 24, false);
+				animation.addByPrefix('singLEFT', 'BF NOTE LEFT0', 24, false);
+				animation.addByPrefix('singRIGHT', 'BF NOTE RIGHT0', 24, false);
+				animation.addByPrefix('singDOWN', 'BF NOTE DOWN0', 24, false);
+				animation.addByPrefix('singUPmiss', 'BF NOTE UP MISS', 24, false);
+				animation.addByPrefix('singLEFTmiss', 'BF NOTE LEFT MISS', 24, false);
+				animation.addByPrefix('singRIGHTmiss', 'BF NOTE RIGHT MISS', 24, false);
+				animation.addByPrefix('singDOWNmiss', 'BF NOTE DOWN MISS', 24, false);
+				animation.addByPrefix('hey', 'BF HEY', 24, false);
+
+				animation.addByPrefix('firstDeath', "BF dies", 24, false);
+				animation.addByPrefix('deathLoop', "BF Dead Loop", 24, true);
+				animation.addByPrefix('deathConfirm', "BF Dead confirm", 24, false);
+
+				animation.addByPrefix('scared', 'BF idle shaking', 24);
+
+				addOffset('idle', -5);
+				addOffset("singUP", 4, 27);
+				addOffset("singRIGHT", 37, -6);
+				addOffset("singLEFT", -41, -7);
+				addOffset("singDOWN", -20, -51);
+				addOffset("singUPmiss", -46, 27);
+				addOffset("singRIGHTmiss", -44, 22);
+				addOffset("singLEFTmiss", 7, 19);
+				addOffset("singDOWNmiss", -15, -19);
+				addOffset("hey", -3, 5);
+				addOffset('firstDeath', 37, 11);
+				addOffset('deathLoop', 37, 5);
+				addOffset('deathConfirm', 37, 69);
+				addOffset('scared', -4);
+
+				playAnim('idle');
+
+				flipX = false;
 
 			case 'bf-christmas':
 				var tex = Paths.getSparrowAtlas('characters/bfChristmas');

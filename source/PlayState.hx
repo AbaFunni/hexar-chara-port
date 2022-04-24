@@ -744,8 +744,8 @@ class PlayState extends MusicBeatState
 			case 'msb':
 				{
 						defaultCamZoom = 0.9;
-						curStage = 'stage';
-						var bg:FlxSprite = new FlxSprite(-600, -200).loadGraphic(Paths.image('chara-bg'));
+						curStage = 'msb';
+						var bg:FlxSprite = new FlxSprite(-200, 50).loadGraphic(Paths.image('chara-bg'));
 						bg.antialiasing = true;
 						bg.scrollFactor.set(0.9, 0.9);
 						bg.active = false;
@@ -850,6 +850,12 @@ class PlayState extends MusicBeatState
 				camPos.set(dad.getGraphicMidpoint().x + 300, dad.getGraphicMidpoint().y);
 			case "chara":
 				dad.y += 220;
+			case "chara-reverse":
+				dad.x += 820
+				dad.y += 300
+			case "bf-reverse":
+				dad.x += -560
+				dad.y += 350
 		}
 
 
@@ -2418,6 +2424,31 @@ class PlayState extends MusicBeatState
 					vocals.volume = 0;
 					// FlxG.sound.music.stop();
 					// FlxG.switchState(new PlayState());
+			}
+		}
+
+		if (curSong == 'Megalo Strike Back')
+		{
+			switch (curBeat)
+			{
+				case 292:
+				    dad.PlayAnim('save', true);
+				case 505:
+				    dad.PlayAnim('shriek', true);
+				case 513:
+				    remove(dad);
+				    dad = new Character(100, 100, 'chara-reverse');
+				    add(dad);
+				    remove(boyfriend);
+				    boyfriend = new Boyfriend(100, 100, 'bf-reverse');
+				    add(boyfriend);
+				case 569:
+				    remove(dad);
+				    dad = new Character(100, 100, 'chara');
+				    add(dad);
+				    remove(boyfriend);
+				    boyfriend = new Boyfriend(100, 100, 'bf');
+				    add(boyfriend);
 			}
 		}
 
