@@ -851,11 +851,11 @@ class PlayState extends MusicBeatState
 			case "chara":
 				dad.y += 220;
 			case "chara-reverse":
-				dad.x += 820
-				dad.y += 300
+				dad.x += 820;
+				dad.y += 300;
 			case "bf-reverse":
-				dad.x += -560
-				dad.y += 350
+				dad.x += -560;
+				dad.y += 350;
 		}
 
 
