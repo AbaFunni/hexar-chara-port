@@ -2432,9 +2432,9 @@ class PlayState extends MusicBeatState
 			switch (curBeat)
 			{
 				case 292:
-				    dad.PlayAnim('save', true);
+				    dad.playAnim('save', true);
 				case 505:
-				    dad.PlayAnim('shriek', true);
+				    dad.playAnim('shriek', true);
 				case 513:
 				    remove(dad);
 				    dad = new Character(100, 100, 'chara-reverse');
